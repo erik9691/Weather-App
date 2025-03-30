@@ -10,6 +10,23 @@ async function getWeatherData(location, inCelsius = true) {
 	}
 
 	try {
+		const display = document.querySelector(".weather-display");
+		const locationDisplayed = display.querySelector(".location");
+		const locationDetailed = display.querySelector(".location-detailed");
+		const temperature = display.querySelector(".temperature");
+		const time = display.querySelector(".time");
+		const climate = display.querySelector(".climate");
+
+		locationDisplayed.innerText = "";
+		locationDetailed.innerText = "";
+		temperature.innerText = "";
+		time.innerText = "";
+		climate.innerText = "";
+
+		const loadingIcons = document.querySelectorAll(".loading");
+		loadingIcons[0].style.display = "block";
+		loadingIcons[1].style.display = "block";
+
 		const response = await fetch(
 			`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${units}&key=5M92PRV9GHGQWMZG843N4HK6F&contentType=json`,
 			{ mode: "cors" }
@@ -51,6 +68,10 @@ async function displayCurrentWeather(userLocation, inCelsius = true) {
 
 			const errorDisplay = document.querySelector(".error-message");
 			errorDisplay.style.display = "none";
+
+			const loadingIcons = document.querySelectorAll(".loading");
+			loadingIcons[0].style.display = "none";
+			loadingIcons[1].style.display = "none";
 		}
 	} catch (error) {
 		console.error("Error displaying weather data:", error.message);

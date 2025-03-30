@@ -124,3 +124,10 @@ header {
 		}
 	}
 }
+
+.loading {
+	display: none;
+	width: 200px;
+	align-self: center;
+	grid-area: 1/1/3/3;
+}
