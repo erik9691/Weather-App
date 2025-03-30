@@ -1,11 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+	</head>
+	<body>
+		<header><p>The Weather App</p></header>
+		<section class="content">
+			<form class="weather-form" action="index.js">
+				<div class="searchbox">
+					<input
+						type="text"
+						placeholder="Enter a city"
+						name="location"
+						id="location-text"
+						minlength="1"
+						required
+					/>
+					<a class="submit-search"><img src="./icons/search.svg" alt="" /></a>
+				</div>
+			</form>
+			<div class="error-message">An error occurred while fetching weather data.</div>
+			<div class="weather-display">
+				<div class="left-side">
+					<p class="location">Buenos Aires</p>
+					<p class="location-detailed">
+						Ciudad de Buenos Aires, Ciudad Autónoma de Buenos Aires, Argentina
+					</p>
+				</div>
+				<div class="right-side">
+					<p class="temperature">29.1°</p>
+					<p class="time">6:07 PM</p>
+					<p class="climate">Partially cloudy</p>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>

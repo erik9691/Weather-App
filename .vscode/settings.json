@@ -4,5 +4,6 @@
 	"prettier.useTabs": true,
 	"prettier.tabWidth": 4,
 	"git.decorations.enabled": false,
-	"prettier.printWidth": 100
+	"prettier.printWidth": 100,
+	"git.enabled": false
 }
